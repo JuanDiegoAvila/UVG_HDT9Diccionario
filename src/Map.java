@@ -12,7 +12,7 @@ public interface Map<K,V>{
 
     public boolean isEmpty();
 
-    public V put(K key,V value);
+    public void put(K key,V value);
 
     public V remove(K key);
 

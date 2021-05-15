@@ -26,8 +26,8 @@ public class HashMap<K,V> implements Map <K,V>{
     }
 
     @Override
-    public V put(K key, V value) {
-        return null;
+    public void put(K key, V value) {
+
     }
 
     @Override
