@@ -5,13 +5,11 @@ public class Main {
     public static void main(String[]args){
 
         boolean state = true;
-
-        //se debe elegir la implementacion que se va a utilizar.
         Map<String,String> diccionario;
 
         while(state){
             try{
-
+                //se debe elegir la implementacion que se va a utilizar.
                 System.out.println("-----------------------------------------------------------------------------------------------------------------------");
                 System.out.println("Bienvenido al diccionario ingles-español");
                 System.out.println("Antes de comenzar debe elegir la implementacion que desea utilizar: ");
