@@ -1,2 +1,2 @@
-public class HashMap {
+public class HashMap<K,V> implements Map {
 }
