@@ -1,17 +1,8 @@
 public class HashMap<K,V> implements Map <K,V>{
 
-    @Override
-    public void clear() {
-
-    }
 
     @Override
     public boolean containsKey(K key) {
-        return false;
-    }
-
-    @Override
-    public boolean containsValue(V value) {
         return false;
     }
 

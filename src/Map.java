@@ -1,10 +1,6 @@
 public interface Map<K,V>{
 
-    public void clear();
-
     public boolean containsKey(K key);
-
-    public boolean containsValue(V value);
 
     public boolean equals(Object o);
 
