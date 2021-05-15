@@ -56,9 +56,9 @@ public class Main {
                 for(String i : temp){
                     //inicia la traduccion.
                     if(diccionario.containsKey(i)){
-                        System.out.println(i+" existe");
-                        String[] valores = diccionario.get(i).split("[ .,;?!¡¿\'\"\\[\\]]+");
-                        traducido.add(valores[0].toString()+" ");
+                        ArrayList valores = new ArrayList();
+                        valores.add(diccionario.get(i));
+                        traducido.add(valores.get(0).toString()+" ");
                     }else{
                         traducido.add(" *"+i+"* ");
                     }

@@ -1,5 +1,3 @@
-import java.util.Comparator;
-
 public class SplayTree <K extends Comparable<K>,V>  implements Map<K,V>  {
 
     private Node raiz;
@@ -26,7 +24,7 @@ public class SplayTree <K extends Comparable<K>,V>  implements Map<K,V>  {
      * @return el valor asociado con la llave
      */
     @Override
-    public V get(K key) {
+    public Object get(K key) {
         raiz = splay(raiz,key);
         if(raiz==null){return null;}
         int cmp = key.compareTo(raiz.key);
@@ -93,11 +91,6 @@ public class SplayTree <K extends Comparable<K>,V>  implements Map<K,V>  {
 
 
     @Override
-    public boolean isEmpty() {
-        return false;
-    }
-
-    @Override
     public void put(K key, V value) {
         if(raiz == null){
             raiz = new Node(key, value);
@@ -128,36 +121,6 @@ public class SplayTree <K extends Comparable<K>,V>  implements Map<K,V>  {
             raiz.value = value;
         }
 
-    }
-
-    @Override
-    public void remove(K key) {
-        if (raiz == null) return; // empty tree
-
-        raiz = splay(raiz, key);
-
-        int cmp = key.compareTo(raiz.key);
-
-        if (cmp == 0) {
-            if (raiz.izquierda == null) {
-                raiz = raiz.derecha;
-            }
-            else {
-                Node x = raiz.derecha;
-                raiz = raiz.izquierda;
-                splay(raiz, key);
-                raiz.derecha = x;
-            }
-        }
-    }
-
-    @Override
-    public int size() {
-        return size(raiz);
-    }
-    private int size(Node x) {
-        if (x == null) return 0;
-        else return 1 + size(x.izquierda) + size(x.derecha);
     }
 
     private Node rotateRight(Node h) {

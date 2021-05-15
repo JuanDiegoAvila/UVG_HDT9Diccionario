@@ -2,17 +2,9 @@ public interface Map<K,V>{
 
     public boolean containsKey(K key);
 
-    public boolean equals(Object o);
-
-    public V get(K key);
-
-    public boolean isEmpty();
+    public Object get(K key);
 
     public void put(K key,V value);
-
-    public void remove(K key);
-
-    public int size();
 
 
 }
