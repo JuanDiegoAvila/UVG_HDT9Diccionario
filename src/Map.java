@@ -14,7 +14,7 @@ public interface Map<K,V>{
 
     public void put(K key,V value);
 
-    public V remove(K key);
+    public void remove(K key);
 
     public int size();
 

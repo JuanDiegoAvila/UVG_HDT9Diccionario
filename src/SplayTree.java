@@ -44,6 +44,7 @@ public class SplayTree <K extends Comparable<K>,V>  implements Map<K,V>  {
     }
 
     private Node splay(Node raiz, K key) {
+        return null;
     }
 
     @Override
@@ -59,7 +60,7 @@ public class SplayTree <K extends Comparable<K>,V>  implements Map<K,V>  {
         }
         raiz = splay(raiz,key);
         int cmp = key.compareTo(raiz.key);
-        // Insert new node at root
+
         if (cmp < 0) {
             Node n = new Node(key, value);
             n.izquierda = raiz.izquierda;
@@ -68,7 +69,7 @@ public class SplayTree <K extends Comparable<K>,V>  implements Map<K,V>  {
             raiz = n;
         }
 
-        // Insert new node at root
+
         else if (cmp > 0) {
             Node n = new Node(key, value);
             n.derecha = raiz.derecha;
@@ -77,7 +78,7 @@ public class SplayTree <K extends Comparable<K>,V>  implements Map<K,V>  {
             raiz = n;
         }
 
-        // It was a duplicate key. Simply replace the value
+
         else {
             raiz.value = value;
         }
