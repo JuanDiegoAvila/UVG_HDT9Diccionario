@@ -12,6 +12,7 @@ public class SplayTree <K extends Comparable<K>,V>  implements Map<K,V>  {
         public Node(K key, V value){
             this.key = key;
             this.value = value;
+
         }
     }
 
@@ -19,9 +20,6 @@ public class SplayTree <K extends Comparable<K>,V>  implements Map<K,V>  {
     public boolean containsKey(K key) {
         return get(key) !=null;
     }
-
-
-
     /**
      * si no existe el valor, regresar nulo
      * @param key
@@ -30,6 +28,7 @@ public class SplayTree <K extends Comparable<K>,V>  implements Map<K,V>  {
     @Override
     public V get(K key) {
         raiz = splay(raiz,key);
+        if(raiz==null){return null;}
         int cmp = key.compareTo(raiz.key);
         if (cmp == 0) return raiz.value;
         else return null;
@@ -78,7 +77,9 @@ public class SplayTree <K extends Comparable<K>,V>  implements Map<K,V>  {
             }
 
             if (h.derecha == null) return h;
-            else                 return rotateLeft(h);
+            else{
+                return rotateLeft(h);
+            }
         }
 
         else return h;
@@ -89,6 +90,7 @@ public class SplayTree <K extends Comparable<K>,V>  implements Map<K,V>  {
         if (x == null) return -1;
         return 1 + Math.max(height(x.izquierda), height(x.derecha));
     }
+
 
     @Override
     public boolean isEmpty() {
