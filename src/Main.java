@@ -21,7 +21,7 @@ public class Main {
                     System.out.println("Ingrese valores entre 1 y 2");
                 }else{
                     Factory Factory = new Factory();
-                    diccionario = Factory.factory(opcion);
+                    //diccionario = Factory.factory(opcion);
                     break;
                 }
             }catch(Exception e){
@@ -40,7 +40,7 @@ public class Main {
                 String[] temp = actual.split("\\s+");
 
                 if(!actual.contains("#")){ //para no incluir la informacion al inicio del documento
-                    if(!diccionario.containsKey(temp[0])){ diccionario.put(temp[0],temp[1]); }
+                    //if(!diccionario.containsKey(temp[0])){ diccionario.put(temp[0],temp[1]); }
                 }
             }
         }catch (Exception ignored){ }
